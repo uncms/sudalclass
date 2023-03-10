@@ -1,0 +1,1112 @@
+:root {
+    --color-black: #101010;
+    --color-gray: #909090;
+    --color-white: #ffffff;
+}
+
+/* ---------------- 공통 영역 ---------------- */
+
+::selection {
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    min-width: 360px;
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ---------------- HEADER 영역 ---------------- */
+
+header{
+    min-width: 360px;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-white);
+    border-bottom: 1px solid #EBEBEB;
+    z-index: 10;
+}
+
+.header-wrapper{
+    max-width: 1320px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.logo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo > img{
+    width: 25px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.logo > h1{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-black);
+}
+
+.header-wrapper > a{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border-radius: 4px;
+    padding: 12px 20px;
+}
+
+/* ---------------- BANNER 영역 ---------------- */
+
+.banner{
+    position: relative;
+    top: 80px;
+    width: 100%;
+    height: 640px;
+    display: flex;
+    justify-content: center;
+    background-image: url(img/banner.jpg);
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+
+.banner-wrapper{
+    max-width: 1320px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 80px;
+}
+
+.banner-wrapper > div{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-white);
+    background-color: var(--color-black);
+    border-radius: 20px;
+    padding: 8px 20px;
+}
+
+.banner-wrapper > h2{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--color-black);
+    line-height: 150%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.banner-wrapper > h2 > br:nth-of-type(2){
+    display: none;
+}
+
+.banner-wrapper > h3{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--color-black);
+}
+
+.banner-wrapper > h3 > br{
+    display: none;
+}
+
+
+/* ---------------- LECTURE 영역 ---------------- */
+
+.lecture{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 160px 0px;
+    margin-top: 80px;
+    overflow-x: hidden;
+}
+
+.lecture-wrapper{
+    max-width: 1320px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 80px;
+}
+
+.lecture-wrapper > h2{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-black);
+    line-height: 150%;
+    text-align: center;
+}
+
+.lecture-wrapper > h3{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-gray);
+    line-height: 150%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.top-slider{
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.bottom-slider{
+    display: flex;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin-top: 40px;
+}
+
+.top-slider > .slide-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    animation: move-rtl 40s linear infinite;
+}
+
+.bottom-slider > .slide-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    animation: move-ltr 40s linear infinite;
+}
+
+@keyframes move-rtl{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes move-ltr{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+.slide{
+    margin-right: 20px;
+}
+
+.slide > img{
+    width: 400px;
+    height: 225px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.slide > p:nth-of-type(1){
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-black);
+    line-height: 150%;
+    word-break: keep-all;
+    margin-top: 20px;
+}
+
+.slide > p:nth-of-type(2){
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-gray);
+    line-height: 125%;
+    margin-top: 8px;
+}
+
+/* ---------------- MENTOR 영역 ---------------- */
+
+.mentor{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 160px 0px;
+    background-color: var(--color-black);
+}
+
+.mentor-wrapper{
+    max-width: 1320px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.mentor-wrapper > h2{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-white);
+    line-height: 150%;
+}
+
+.mentor-wrapper > h3{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-white);
+    line-height: 150%;
+    margin-top: 20px;
+}
+
+.mentor-wrapper > div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 80px;
+}
+
+.mentor-profile{
+    width: 100%;
+    height: 240px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--color-white);
+    border-radius: 8px;
+    padding: 40px;
+}
+
+.mentor-profile > img{
+    width: 160px;
+    height: 160px;
+    margin-right: 40px;
+}
+
+.mentor-profile > div > p:nth-of-type(1){
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-black);
+}
+
+.mentor-profile > div > p:nth-of-type(2){
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-black);
+    margin-top: 4px;
+}
+
+.mentor-profile > div > p:nth-of-type(3){
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--color-black);
+    margin-top: 20px;
+}
+
+.mentor-profile > div > p:nth-of-type(4){
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-black);
+    line-height: 150%;
+    margin-top: 8px;
+}
+
+/* ---------------- CURRICULUM 영역 ---------------- */
+
+.curriculum{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 160px 0px;
+    background-color: #f0f0f0;
+}
+
+.curriculum-wrapper{
+    max-width: 1320px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.curriculum-wrapper > h2{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-black);
+    line-height: 150%;
+    text-align: center;
+}
+
+.curriculum-wrapper > h3{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-gray);
+    line-height: 150%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.curriculum-wrapper > img{
+    width: 1024px;
+    object-fit: contain;
+    object-position: top;
+    margin-top: 80px;
+}
+
+/* ---------------- FAQ 영역 ---------------- */
+
+.faq{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 160px 0px;
+}
+
+.faq-wrapper{
+    max-width: 1320px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.faq-wrapper > h2{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-black);
+    line-height: 150%;
+}
+
+.faq-wrapper > h3{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--color-gray);
+    line-height: 150%;
+    margin-top: 20px;
+    margin-bottom: 80px;
+}
+
+input[id*="faq"]{
+    display: none;
+}
+
+input[id*="faq"] + label{
+    width: 100%;
+    display: block;
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--color-black);
+    border-bottom : 1px solid #EBEBEB;
+    padding-bottom: 40px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+input[id="faq-1"] + label{
+    margin-top: 0px;
+}
+
+input[id*="faq"] + label + div{
+    max-height: 0;
+    overflow: hidden;
+}
+
+input[id*="faq"] + label + div > p{
+    width: 100%;
+    display: inline-block;
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-black);
+    line-height: 150%;
+    word-break: keep-all;
+    padding-bottom: 40px;
+}
+
+input[id*="faq"]:checked + label{
+    border-bottom: none;
+}
+
+input[id*="faq"]:checked + label + div{
+    max-height: 360px;
+    border-bottom : 1px solid #EBEBEB;
+}
+
+/* ---------------- CONTACT 영역 ---------------- */
+
+.contact{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--color-gray);
+    background-color: var(--color-black);
+    padding: 160px 0px;
+}
+
+.contact-wrapper{
+    max-width: 1320px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.contact-wrapper > h2{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--color-white);
+}
+
+.contact-wrapper > div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 80px;
+}
+
+.contact-wrapper > div > a > div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid var(--color-white);
+    border-radius: 8px;
+}
+
+.contact-wrapper > div > a > div > img{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.contact-wrapper > div > a > div > p {
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-white);
+}
+
+/* ---------------- FOOTER 영역 ---------------- */
+
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-black);
+    padding: 80px 0px;
+}
+
+.footer-wrapper{
+    max-width: 1320px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.logo > h2{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--color-gray);
+}
+
+.footer-wrapper > p{
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-gray);
+    line-height: 150%;
+    margin-top: 20px;
+    word-break: keep-all;
+}
+
+@media screen and (max-width: 1320px) {
+
+    .mentor-profile{
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .mentor-profile > img{
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .mentor-profile > div > p:nth-of-type(1){
+        position: absolute;
+        top: 140px;
+        right: 40px;
+    }
+    .mentor-profile > div > p:nth-of-type(2){
+        position: absolute;
+        top: 160px;
+        right: 40px;
+    }
+    .mentor-profile > div > p:nth-of-type(3){
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    /* ---------------- HEADER 영역 ---------------- */
+
+    header{
+        height: 72px;
+    }
+
+    /* ---------------- BANNER 영역 ---------------- */
+
+    .banner{
+        top: 72px;
+        height: 520px;
+        background-size: cover;
+    }
+
+    .banner-wrapper{
+        padding-bottom: 60px;
+    }
+
+    .banner-wrapper > h2{
+        font-size: 40px;
+    }
+
+    .banner-wrapper > h3{
+        font-size: 20px;
+    }
+
+    /* ---------------- LECTURE 영역 ---------------- */
+
+    .lecture{
+        padding: 120px 0px;
+        margin-top: 72px;
+    }
+
+    .lecture-wrapper{
+        margin-bottom: 60px;
+    }
+
+    .lecture-wrapper > h2{
+        font-size: 28px;
+    }
+
+    .lecture-wrapper > h3{
+        font-size: 18px;
+    }
+
+    .slide{
+        margin-right: 20px;
+    }
+
+    .slide > img{
+        width: 360px;
+        height: 202.5px;
+    }
+
+    .slide > p:nth-of-type(1){
+        font-size: 18px;
+    }
+
+/* ---------------- MENTOR 영역 ---------------- */
+
+    .mentor{
+        padding: 120px 0px;
+    }
+
+    .mentor-wrapper > h2{
+        font-size: 28px;
+    }
+
+    .mentor-wrapper > h3{
+        font-size: 18px;
+    }
+
+    .mentor-wrapper > div{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 20px;
+        row-gap: 20px;
+        margin-top: 60px;
+    }
+
+    .mentor-profile{
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .mentor-profile > img{
+        margin-right: 40px;
+        margin-bottom: 0;
+    }
+
+    .mentor-profile > div > p:nth-of-type(1){
+        position:static;
+        font-size: 14px;
+
+    }
+    .mentor-profile > div > p:nth-of-type(2){
+        position: static;
+        font-size: 18px;
+    }
+    .mentor-profile > div > p:nth-of-type(3){
+        margin-top: 20px;
+    }
+
+    /* ---------------- CURRICULUM 영역 ---------------- */
+
+    .curriculum{
+        padding: 120px 0px;
+    }
+
+    .curriculum-wrapper > h2{
+        font-size: 28px;
+    }
+
+    .curriculum-wrapper > h3{
+        font-size: 18px;
+    }
+
+    .curriculum-wrapper > img{
+        width: 768px;
+        margin-top: 60px;
+    }
+
+    /* ---------------- FAQ 영역 ---------------- */
+
+    .faq{
+        padding: 120px 0px;
+    }
+
+    .faq-wrapper > h2{
+        font-size: 28px;
+    }
+
+    .faq-wrapper > h3{
+        font-size: 18px;
+        margin-bottom: 60px;
+    }
+
+    input[id*="faq"]{
+        display: none;
+    }
+
+    input[id*="faq"] + label{
+        font-size: 16px;
+        padding-bottom: 30px;
+        margin-top: 30px;
+    }
+
+    input[id*="faq"] + label + div > p{
+        font-size: 16px;
+        padding-bottom: 30px;
+    }
+
+    input[id="faq-1"] + label{
+        margin-top: 0px;
+    }
+
+    /* ---------------- CONTACT 영역 ---------------- */
+
+    .contact{
+        padding: 120px 0px;
+    }
+
+    .contact-wrapper > h2{
+        font-size: 28px;
+    }
+
+    .contact-wrapper > div{
+        margin-top: 60px;
+    }
+
+    /* ---------------- FOOTER 영역 ---------------- */
+
+    footer{
+        padding: 60px 0px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    /* ---------------- HEADER 영역 ---------------- */
+
+    header{
+        height: 64px;
+    }
+
+    .header-wrapper{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+    /* ---------------- BANNER 영역 ---------------- */
+
+    .banner{
+        top: 64px;
+        height: 360px;
+        background-size: cover;
+    }
+    
+    .banner-wrapper{
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 40px;
+    }
+
+    .banner-wrapper > div{
+        font-size: 14px;
+    }
+
+    .banner-wrapper > h2{
+        font-size: 32px;
+        margin-top: 16px;
+        margin-bottom: 16px;
+        word-break: keep-all;
+    }
+
+    .banner-wrapper > h2 > span{
+        display: none;
+    }
+
+    .banner-wrapper > h2 > br{
+        display: none;
+    }
+
+    .banner-wrapper > h2 > br:nth-of-type(2){
+        display: block;
+    }
+
+    .banner-wrapper > h3{
+        font-size: 18px;
+        line-height: 150%;
+        word-break: keep-all;
+    }
+    .banner-wrapper > h3 > br{
+        display: block;
+    }
+
+    /* ---------------- LECTURE 영역 ---------------- */
+
+    .lecture{
+        padding: 80px 0px;
+        margin-top: 64px;
+    }
+
+    .lecture-wrapper{
+        margin-bottom: 40px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .lecture-wrapper > h2{
+        font-size: 20px;
+    }
+
+    .lecture-wrapper > h3{
+        font-size: 16px;
+        margin-top: 16px;
+    }
+
+    .slide{
+        margin-right: 16px;
+    }
+
+    .slide > img{
+        width: 320px;
+        height: 180px;
+    }
+
+    .slide > p:nth-of-type(1){
+        font-size: 16px;
+        margin-top: 16px;
+    }
+
+    .slide > p:nth-of-type(2){
+        font-size: 12px;
+        margin-top: 4px;
+    }
+
+/* ---------------- MENTOR 영역 ---------------- */
+
+    .mentor{
+        padding: 80px 0px;
+    }
+
+    .mentor-wrapper {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .mentor-wrapper > h2{
+        font-size: 20px;
+    }
+
+    .mentor-wrapper > h3{
+        font-size: 16px;
+        margin-top: 16px;
+    }
+
+    .mentor-wrapper > div{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 16px;
+        row-gap: 16px;
+        margin-top: 40px;
+    }
+
+    .mentor-profile{
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 32px;
+    }
+
+    .mentor-profile > img{
+        width: 120px;
+        height: 120px;
+        margin-right: 0;
+        margin-bottom: 16px;
+    }
+
+    .mentor-profile > div > p:nth-of-type(1){
+        position: absolute;
+        top: 104px;
+        font-size: 12px;
+
+    }
+    .mentor-profile > div > p:nth-of-type(2){
+        position: absolute;
+        top: 120px;
+        font-size: 16px;
+    }
+
+    .mentor-profile > div > p:nth-of-type(3){
+        font-size: 16px;
+        margin-top: 0;
+    }
+
+    .mentor-profile > div > p:nth-of-type(4){
+        font-size: 14px;
+    }
+
+    /* ---------------- CURRICULUM 영역 ---------------- */
+
+    .curriculum{
+        padding: 80px 0px;
+    }
+
+    .curriculum-wrapper{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .curriculum-wrapper > h2{
+        font-size: 20px;
+    }
+
+    .curriculum-wrapper > h3{
+        font-size: 16px;
+        margin-top: 16px;
+        word-break: keep-all;
+        line-height: 150%;
+    }
+
+    .curriculum-wrapper > h3 > br{
+        display: none;
+    }
+
+    .curriculum-wrapper > img{
+        width: 576px;
+        margin-top: 40px;
+    }
+
+    /* ---------------- FAQ 영역 ---------------- */
+
+    .faq{
+        padding: 80px 0px;
+    }
+
+    .faq-wrapper{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .faq-wrapper > h2{
+        font-size: 20px;
+    }
+
+    .faq-wrapper > h3{
+        font-size: 16px;
+        margin-top: 16px;
+        margin-bottom: 40px;
+    }
+
+    input[id*="faq"]{
+        display: none;
+    }
+
+    input[id*="faq"] + label{
+        font-size: 16px;
+        padding-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    input[id*="faq"] + label + div > p{
+        font-size: 14px;
+        padding-bottom: 20px;
+    }
+
+    input[id="faq-1"] + label{
+        margin-top: 0px;
+    }
+
+    /* ---------------- CONTACT 영역 ---------------- */
+
+    .contact{
+        padding: 80px 0px;
+    }
+
+    .contact-wrapper{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .contact-wrapper > h2{
+        font-size: 20px;
+    }
+
+    .contact-wrapper > div{
+        grid-template-columns: 1fr;
+        row-gap: 16px;
+        column-gap: 16px;
+        margin-top: 40px;
+    }
+
+    .contact-wrapper > div > a > div > img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .contact-wrapper > div > a > div > p {
+        font-size: 14px;
+    }
+
+    /* ---------------- FOOTER 영역 ---------------- */
+
+    footer{
+        padding: 40px 0px;
+    }
+
+    .footer-wrapper{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .footer-wrapper > p{
+        margin-top: 16px;
+    }
+
+}
